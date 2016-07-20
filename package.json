@@ -5,6 +5,9 @@
     "start": "meteor run"
   },
   "dependencies": {
-    "meteor-node-stubs": "~0.2.0"
+    "gl": "^4.0.2",
+    "mapbox-gl": "^0.21.0",
+    "meteor-node-stubs": "^0.2.3",
+    "node-zlib-backport": "^0.11.15"
   }
 }

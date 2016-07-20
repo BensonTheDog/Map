@@ -9,11 +9,9 @@ Alerts.allow({
 Officer = new SimpleSchema({
 	name: {
 		type: String,
-		label: "Officer Name"
 	},
 	number:{
 		type: String,
-		label: "Badge Number"
 	},
 });
 
@@ -43,6 +41,12 @@ AlertSchema = new SimpleSchema({
         }
 	},
 
+});
+
+Meteor.methods({
+	deleteAlert: function(id) {
+		Alerts.remove(id);
+	}
 });
 
 Alerts.attachSchema ( AlertSchema )

@@ -79,7 +79,7 @@ body
  
 header
     color #FFF
-    background: purp
+    background: black
     padding 20px
     fixed top left
     width 100%
@@ -163,8 +163,8 @@ p
         border-color @background
         shadow-level(2)
     &.btn-primary
-        background teal
-        border-color teal
+        background red
+        border-color red
         color dark-purp
         &:hover
             background @background - 40
@@ -258,53 +258,7 @@ input, select, textarea
 .autoform-remove-item-wrap
     vertical-align middle
  
-.side-nav
-    fixed bottom left
-    height 100px
-    width 100%
-    overflow hidden
-    background dark-purp
-    color #FFF
-    z-index: z.header
-    shadow-level(2)
-    ul
-        margin 0
-        padding 0
-        display flex
-        justify-content space-between
-        list-style none
-    a
-        color #FFF
-        text-decoration none
-        padding 20px 20px
-        display block
-        text-align center
-        trans()
-        &:hover, &.active
-            background purp
-    i
-        display block
-        font-size 2em
-        margin-bottom 10px
-    +above($med)
-        height 100%
-        z-index: z.mid
-        padding 120px 0
-        fixed top left
-        width $side-nav
-        ul
-            display block
-        shadow-level(-1)
-        a
-            padding 20px 10px
-            &:hover, &.active
-                border-left 4px solid teal
-    +above($large)
-        width $side-nav-large
-        a
-            padding 20px 20px
-            &:hover, &.active
-                border-left 10px solid teal
+
  
 .Alert
     background #FFF
@@ -333,7 +287,7 @@ input, select, textarea
         margin-bottom 10px
     button
         margin-top 20px
-    .fa-trash
+    .fa-times
         opacity 0.3
         cursor pointer
         position absolute
@@ -375,4 +329,4 @@ input, select, textarea
         right 0
         left auto
         a
-            color dark-purp
+            color black
