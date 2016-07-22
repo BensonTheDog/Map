@@ -50,11 +50,3 @@ Meteor.methods({
 });
 
 Alerts.attachSchema ( AlertSchema )
-
-
-
-
-
-
-
-
