@@ -16,6 +16,7 @@ Officer = new SimpleSchema({
 });
 
 
+
 AlertSchema = new SimpleSchema({
 	level: {
 		type: String,
