@@ -2,6 +2,12 @@ Meteor.publish('Alerts', function(){
 	return Alerts.find({author: this.userId});
 });
 
+// marker collection
+var Markers = new Mongo.Collection('markers');
+Meteor.publish("markers", function () {
+  return Markers.find();
+});
+
 
 // Listen to incoming HTTP requests, can only be used on the server
 WebApp.connectHandlers.use(function(req, res, next) {
@@ -9,15 +15,9 @@ WebApp.connectHandlers.use(function(req, res, next) {
   return next();
 });
 
-// marker collection
-var Markers = new Mongo.Collection('markers');
-Meteor.publish("markers", function () {
-  return Markers.find();
-});
-
-//Markers.allow gives permission for Markers.insert to take places
+/* //Markers.allow gives permission for Markers.insert to take places
 Markers.allow({
-	insert: function(userId, doc) {
+	'insert': function(userId, doc) {
 
 		console.log("Doc:"+ doc);
 		return !!userId;
@@ -29,11 +29,11 @@ Markers.allow({
 	},
 
 
-});
+}); */
 
 
 
-// Defaults collection
+/* // Defaults collection
 var Defaults = new Mongo.Collection('defaults');
 Meteor.publish("defaults", function () {
   return Defaults.find();
@@ -53,4 +53,4 @@ Defaults.allow({
 	},
 
 	
-});
+}); */
