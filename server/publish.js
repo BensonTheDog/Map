@@ -3,17 +3,17 @@ Meteor.publish('Alerts', function(){
 });
 
 // marker collection
-var Markers = new Mongo.Collection('markers');
+var Markers = new Meteor.Collection('markers');
 Meteor.publish("markers", function () {
   return Markers.find();
 });
-
 
 // Listen to incoming HTTP requests, can only be used on the server
 WebApp.connectHandlers.use(function(req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   return next();
 });
+
 
 /* //Markers.allow gives permission for Markers.insert to take places
 Markers.allow({
