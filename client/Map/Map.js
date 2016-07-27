@@ -7,7 +7,9 @@ Meteor.startup(function () {
 });
 
 //create marker collection
-var Markers = new Mongo.Collection('markers');
+//var only available in current file
+//Markers = new Mongo.collection is a global variable
+ Markers = new Mongo.Collection('markers');
 
 Meteor.subscribe('markers');
 

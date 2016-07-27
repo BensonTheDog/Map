@@ -1,5 +1,6 @@
 Alerts = new Mongo.Collection('Alerts');
 
+
 Alerts.allow({
 	insert: function(userId, doc) {
 		return !!userId;
@@ -15,9 +16,25 @@ Officer = new SimpleSchema({
 	},
 });
 
+LatLng = new SimpleSchema({
+	LatLng: {
+		type: Number,
+	},
+ 	lat: {
+ 		type: Number,
+ 		label: "Latitude"
+ 	},	
+ 	lng: {
+ 		type: Number,
+ 		label: "Longitude"
+	}
+});
 
 
 AlertSchema = new SimpleSchema({
+	LatLng: {
+		type: LatLng,
+ 	},
 	level: {
 		type: String,
 		label: "Risk Level",
@@ -30,7 +47,7 @@ AlertSchema = new SimpleSchema({
 	},
 
 	officer: {
-		type: [Officer],
+		type: Officer,
 	},
 	author:{
 		type: "Author",
@@ -43,6 +60,7 @@ AlertSchema = new SimpleSchema({
 	},
 
 });
+
 
 Meteor.methods({
 	deleteAlert: function(id) {
