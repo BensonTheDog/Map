@@ -1,11 +1,6 @@
 Template.NewAlert.onCreated(function(){
-    this.lat = new ReactiveVar(1000);
-    this.lng = new ReactiveVar(-1000);
-    this.lat.set(1000);
-    this.lng.set(-1000);
-
-    Session.set('lat', 1000);
-    Session.set('lng', -1000);
+    Session.set('lat');
+    Session.set('lng');
 });
 
 
@@ -16,24 +11,26 @@ Template.NewAlert.events({
 });
 
 
+
 Template.NewAlert.helpers({
     lat: () => {
-        return Template.instance().lat.get();
+        return Session.get('lat');
     },
     lng: () => {
-        return Template.instance().lng.get();
+        return Session.get('lng');
     }
-
-
 });
 
 
 var preHooks = {
    before: {
        insert: (alert)=> {
-           console.log('old Description: ' + alert.desc );
-           alert.desc = Session.get('lat') +' [' + alert.desc +']';
-           console.log('new Description: ' + alert.desc );
+           console.log('Session lat, lng: ' + Session.get('lat')  +','+ Session.get('lng'));
+           console.log(alert);
+           alert.LatLng = {};
+           alert.LatLng.lat = Session.get('lat');
+           alert.LatLng.lng = Session.get('lng');
+           console.log(alert);
            return alert; 
        }
    }

@@ -1,7 +1,8 @@
 // on startup run resizing event
+
 Meteor.startup(function () {
     $(window).resize(function () {
-        $('#map').css('height', window.innerHeight - 40 - 20);
+        $('#map').css('height', window.innerHeight - 82 - 45);
     });
     $(window).resize(); // trigger resize event 
 });
@@ -9,7 +10,7 @@ Meteor.startup(function () {
 //create marker collection
 //var only available in current file
 //Markers = new Mongo.collection is a global variable
- Markers = new Mongo.Collection('markers');
+Markers = new Mongo.Collection('markers');
 
 Meteor.subscribe('markers');
 
@@ -29,7 +30,8 @@ Template.map.rendered = function () {
     Markers.insert({ latlng: event.latlng });
     currentLatLng = event.latlng;
     console.log("currentLatLng = " + currentLatLng);
-
+    Session.set('lat', currentLatLng.lat);
+    Session.set('lng', currentLatLng.lng);
   });
 
   var query = Markers.find();

@@ -15,7 +15,7 @@ WebApp.connectHandlers.use(function(req, res, next) {
 });
 
 
-/* //Markers.allow gives permission for Markers.insert to take places
+ //Markers.allow gives permission for Markers.insert to take places
 Markers.allow({
 	'insert': function(userId, doc) {
 
@@ -29,28 +29,6 @@ Markers.allow({
 	},
 
 
-}); */
+}); 
 
 
-
-/* // Defaults collection
-var Defaults = new Mongo.Collection('defaults');
-Meteor.publish("defaults", function () {
-  return Defaults.find();
-});
-
-//Markers.allow gives permission for Markers.insert to take places
-Defaults.allow({
-	insert: function(userId, doc) {
-//Defaults are being output here
-		console.log("Defaults:"+ doc);
-		return !!userId;
-	},
-	
-	remove: function(userId, doc){
-// return!!userId lets "delete" happen if this user has an ID
-		return !!userId;
-	},
-
-	
-}); */

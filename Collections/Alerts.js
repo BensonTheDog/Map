@@ -19,18 +19,26 @@ Officer = new SimpleSchema({
 LatLng = new SimpleSchema({
  	lat: {
  		type: Number,
- 		label: "Latitude"
+ 		label: "Latitude",
+		decimal: true
+
  	},	
  	lng: {
  		type: Number,
- 		label: "Longitude"
+ 		label: "Longitude",
+		decimal: true
+
 	}
 });
 
 
 AlertSchema = new SimpleSchema({
 	LatLng: {
-		type: LatLng,
+		type: LatLng,	
+		// optional: true
+		autoform: {
+			type: "hidden"
+		}
  	},
 	level: {
 		type: String,

@@ -1,6 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  height: 3000px;
 }
 
 body {
@@ -10,10 +11,12 @@ body {
 #container {
   width: 100%;
   margin: 15px auto 0 auto;
+  height: 45%;
 }
 
-.map {
-  border: solid 1px black;
+#map {
+  border: solid 00px black;
+  height: 100%;
 }
 
 .title {
