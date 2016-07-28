@@ -1,5 +1,20 @@
-<template name=" NewAlert">
-	<div class="New-Alert-Container">
-		{{> quickForm collection="Alerts" id="insertAlertForm" type="insert" class="New-Alert-Form"}}
+<template name="NewAlert"> 
+something here
+    <div>{{lat}}</div><div> {{lng}}</div>
+
+<div class="new-alert-container">
+
+    {{> quickForm collection="Alerts" id="insertAlerForm" type="insert" class="new-alert-form"}}
+
+
+<!--{{#autoForm id="insertAlertForm" collection="Alerts"}}
+        {{> afQuickField name="name"}}
+        {{> afQuickField name="desc"}}
+        {{> afQuickField name="ingredients"}}
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+{{/autoForm}}-->
+
 	</div>
 </template>

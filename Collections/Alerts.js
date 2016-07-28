@@ -17,9 +17,6 @@ Officer = new SimpleSchema({
 });
 
 LatLng = new SimpleSchema({
-	LatLng: {
-		type: Number,
-	},
  	lat: {
  		type: Number,
  		label: "Latitude"

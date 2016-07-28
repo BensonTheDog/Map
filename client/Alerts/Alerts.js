@@ -5,3 +5,7 @@ Template.Alerts.helpers({
 		return Alerts.find({})
 	}
 });
+
+// Template.Alerts.rendered = function () {
+// 	$(window).resize(); // trigger resize event 
+// };
