@@ -33,17 +33,17 @@ var preHooks = {
            console.log(alert);
            return alert; 
        }
-   }
-//    ,
-    // onSubmit: function (insertDoc, updateDoc, currentDoc)  { 
-    //             insertDoc.desc =Session.get('lat') + insertDoc.desc;
-    //         console.log('on before' + insertDoc.desc);
-    //         this.done();
-    //         //return false;
-    // },
-    // onError: function(name, error, template) {
-    //       console.log(name + " error:", error);
-    // }
+   },
+    
+    onSubmit: function (insertDoc, updateDoc, currentDoc)  { 
+                insertDoc.desc =Session.get('lat') + insertDoc.desc;
+            console.log('on before' + insertDoc.desc);
+            this.done();
+            //return false;
+    },
+    onError: function(name, error, template) {
+          console.log(name + " error:", error);
+    }
 };
 
 AutoForm.addHooks('insertAlertForm', preHooks);
